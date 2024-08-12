@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Login</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_username">Username:</label>
+            <input type="text" name="username" id="id_username" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="id_password">Password:</label>
+            <input type="password" name="password" id="id_password" class="form-control" required>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Login</button>
+        <br>
+        <a href="{% url 'signup' %}">If you don't have an account click !</a>
+    </form>
+</div>
+{% endblock %}
